@@ -10,20 +10,22 @@ import java.util.Scanner;
 * So, 1 hour contains 60 * 60 seconds.
 * */
 public class HoursToSeconds {
-    public static int calculateSeconds(int hours) {
+    public static int calculateSeconds(int hours, int minutes) {
         int seconds = 0;
-        seconds = hours * 60 * 60;
+        seconds = hours * 60 * 60 + minutes * 60;
 
         return seconds;
     }
 
     public static void main(String [] args) {
         Scanner myObj = new Scanner(System.in);
-        System.out.println("Enter the number of hours : ");
+        System.out.print("Enter the number of hours : ");
         int numberOfHours = myObj.nextInt();
+        System.out.print("Enter the number of minutes : ");
+        int numberOfMinutes = myObj.nextInt();
         myObj.close();
 
-        int numberOfSeconds = calculateSeconds(numberOfHours);
-        System.out.println("There are " + numberOfSeconds + " seconds in " + numberOfHours + " hours.");
+        int numberOfSeconds = calculateSeconds(numberOfHours, numberOfMinutes);
+        System.out.println("There are " + numberOfSeconds + " seconds in " + numberOfHours + " hours and " + numberOfMinutes + " minutes.");
     }
 }
