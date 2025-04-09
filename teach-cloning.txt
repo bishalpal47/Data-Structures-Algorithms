@@ -1,0 +1,1 @@
+Teaching how to clone a file in git
